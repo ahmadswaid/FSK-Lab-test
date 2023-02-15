@@ -50,9 +50,9 @@ public class Activator extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		DBKernel.isKNIME = true;
 		MyLogger.isKNIME = true;
-		DBKernel.setCaller4Trigger("Einheiten", new MyUnitCaller());
-		DBKernel.getLocalConn(true);
-		DBKernel.getTempSA(DBKernel.HSHDB_PATH);
+		//DBKernel.setCaller4Trigger("Einheiten", new MyUnitCaller());
+		//DBKernel.getLocalConn(true);
+		//DBKernel.getTempSA(DBKernel.HSHDB_PATH);
 		super.start(context);
 		plugin = this;
 	}
