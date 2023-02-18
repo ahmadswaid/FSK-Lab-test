@@ -51,9 +51,12 @@ public class Activator extends AbstractUIPlugin {
 		DBKernel.isKNIME = true;
 		
 		MyLogger.isKNIME = true;
-		DBKernel.setCaller4Trigger("Einheiten", new MyUnitCaller());
-		DBKernel.getLocalConn(true);
-		DBKernel.getTempSA(DBKernel.HSHDB_PATH);
+		if(System.getProperty("loadDBGUI") == "true") {
+			System.out.println("Profile ID:  " + System.getProperty("profileId"));
+			DBKernel.setCaller4Trigger("Einheiten", new MyUnitCaller());
+			DBKernel.getLocalConn(true);
+			DBKernel.getTempSA(DBKernel.HSHDB_PATH);
+		}
 		super.start(context);
 		plugin = this;
 	}

@@ -69,6 +69,12 @@
 
 	<profiles>
 		<profile>
+			<properties>
+				<loadDBGUI>false</loadDBGUI>
+			</properties>
+	        <id>community-jenkins</id>
+	    </profile>
+		<profile>
 			<id>jacoco</id>
 			<activation>
 				<activeByDefault>false</activeByDefault>
@@ -136,6 +142,9 @@
 						<includes>
 							<include>%regex[.*]</include>
 						</includes>
+						<systemProperties>
+		                   <loadDBGUI>${loadDBGUI}</loadDBGUI>
+		                </systemProperties>
 					</configuration>
 				</plugin>
 				<plugin>
